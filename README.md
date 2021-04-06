@@ -15,7 +15,9 @@ The architectures and training for both stages is described bellow.
 
 ## **Pre-adaptation Learning**
 -> todo insert pre-adaptation learning diagram
-  ![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Pre-adaptation_learning_architecture.png?raw=true)
+
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Pre-adaptation_learning_architecture.png" alt="drawing" width="400"/>
+
 
 The pre-adaptation phase itself is made up of **three distinct steps**, each responsible for training different sets of weights and seeking different outcomes. These three steps need to be **performed on every domain** of the dataset used, and have for final objective to obtain **tuned weights for the Source Feature Extractor layers** and **source relevance scores** (both necessary for the WAMDA model).
 
