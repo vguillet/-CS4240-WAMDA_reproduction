@@ -41,7 +41,8 @@ Here, f_dim refers to the dimensionality of source feature space and  n_classes 
 ### 1. Training F_S_i - D_S_i:
 The F_S_i - D_S_i step is necessary for training the F_S_i weights. The F_S_i layer set itself is responsible for performing the feature extraction employed in subsequent steps. The Q_S_i layer is there to simply act as an adaptor to allow for multi-class training and predictions to be performed.
 
--> todo insert model summary
+
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/FSiDSi_model_summary.png" alt="drawing" width="300"/>
 
 The following training settings were applied:
 An Image generator was created to load images in during training. The rescale factor was set to 1./255, and a validation split of 0.2 was selected. The following data augmentations settings were adopted:
