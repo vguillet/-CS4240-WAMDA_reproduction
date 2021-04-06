@@ -69,7 +69,7 @@ Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finaly frozen 
 
 ## **WAMDA**
 
-<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png" alt="drawing" width="300"/>
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png" alt="drawing" width="400"/>
 
 Upon completing the pre-adaption phase and collected all necessary output, the WAMDA model can finaly be trained. The training itself is again done in **two distinct parts**, each to be **applied to each domains** respectively.
 A total of four different layer sets are required for the WAMDA model, and are structured as follow:
