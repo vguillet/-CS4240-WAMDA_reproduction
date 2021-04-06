@@ -14,10 +14,8 @@ The second stage is the **WAMDA model** training itself. A weighted alignment of
 The architectures and training for both stages is described bellow.
 
 ## **Pre-adaptation Learning**
--> todo insert pre-adaptation learning diagram
 
 <img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Pre-adaptation_learning_architecture.png" alt="drawing" width="400"/>
-
 
 The pre-adaptation phase itself is made up of **three distinct steps**, each responsible for training different sets of weights and seeking different outcomes. These three steps need to be **performed on every domain** of the dataset used, and have for final objective to obtain **tuned weights for the Source Feature Extractor layers** and **source relevance scores** (both necessary for the WAMDA model).
 
@@ -67,13 +65,11 @@ Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i la
 ### 3. Obtaining source relevance scores using F_S_i - D_S_i:
 Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finaly frozen and an inference step is undertaken. The output of the model is then used in the equation shown below to obtain the source relevance scores which are recorded for subsequent use.
 
--> todo add alpha equation
-![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Source_relevance_sources_eq.png?raw=true)
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Source_relevance_sources_eq.png" alt="drawing" width="100"/>
 
 ## **WAMDA**
 
--> todo insert WAMDA learning diagram
-![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png?raw=true)
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png" alt="drawing" width="100"/>
 
 Upon completing the pre-adaption phase and collected all necessary output, the WAMDA model can finaly be trained. The training itself is again done in **two distinct parts**, each to be **applied to each domains** respectively.
 A total of four different layer sets are required for the WAMDA model, and are structured as follow:
@@ -113,7 +109,6 @@ Each loss was trained using loss-specific optimisers; **per-source cross-entropy
 
 A number of limitations and unknows were found for this part, including undefined parameters and unknown variables. These are highlighted in the figure bellow:
 
---> todo insert wamda step 5 overview
 ![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_step_5.png?raw=true)
 
 ### 2. Target Specific Learning:
@@ -125,7 +120,6 @@ The second part, refered to a Guidance from Source Weighted Aligned Spaces, the 
 
 This aspect of the architecture is the most complex encountered, and as a result also presents a number of gaps, such as hyperparameters and functions left out of the original paper. These are again highlighted in the figure bellow:
 
---> todo insert wamda step 6 overview
 ![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_step_6.png?raw=true)
 
 ## Reproduction attempt and Results
