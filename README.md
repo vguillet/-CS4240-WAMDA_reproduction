@@ -15,7 +15,7 @@ The architectures and training for both stages is described bellow.
 
 ## **Pre-adaptation Learning**
 
-<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Pre-adaptation_learning_architecture.png" alt="drawing" width="400"/>
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Pre-adaptation_learning_architecture.png" alt="drawing" width="300"/>
 
 The pre-adaptation phase itself is made up of **three distinct steps**, each responsible for training different sets of weights and seeking different outcomes. These three steps need to be **performed on every domain** of the dataset used, and have for final objective to obtain **tuned weights for the Source Feature Extractor layers** and **source relevance scores** (both necessary for the WAMDA model).
 
@@ -69,7 +69,7 @@ Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finaly frozen 
 
 ## **WAMDA**
 
-<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png" alt="drawing" width="100"/>
+<img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_architecture.png" alt="drawing" width="300"/>
 
 Upon completing the pre-adaption phase and collected all necessary output, the WAMDA model can finaly be trained. The training itself is again done in **two distinct parts**, each to be **applied to each domains** respectively.
 A total of four different layer sets are required for the WAMDA model, and are structured as follow:
