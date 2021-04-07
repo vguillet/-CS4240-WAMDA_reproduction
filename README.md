@@ -7,7 +7,7 @@
 
 The paper proposes an approach split into **two major sections**, which themselves involve a number of steps.
 
-The first stage is refered to as **pre-adaptation training**, and has for goal to obtain the relevance scores and "learn the discriminative knowledge inherently present in each source.
+The first stage is referred to as **pre-adaptation training**, and has for goal to obtain the relevance scores and "learn the discriminative knowledge inherently present in each source.
 
 The second stage is the **WAMDA model** training itself. A weighted alignment of domains is performed, and a classifier is learned over this weighted aligned space.
 
@@ -19,7 +19,7 @@ The architectures and training for both stages is described bellow.
 
 The pre-adaptation phase itself is made up of **three distinct steps**, each responsible for training different sets of weights and seeking different outcomes. These three steps need to be **performed on every domain** of the dataset used, and have for final objective to obtain **tuned weights for the Source Feature Extractor layers** and **source relevance scores** (both necessary for the WAMDA model).
 
-Three different layer sets are necessary for this section, and their respective achitectures are described bellow:
+Three different layer sets are necessary for this section, and their respective architectures are described bellow:
 
 **Source Feature Extractor: F_S_i**
 - ImageNet pre-trained ResNet-50 till average pool layer
@@ -36,7 +36,7 @@ Three different layer sets are necessary for this section, and their respective 
 
 Here, f_dim refers to the dimensionality of source feature space and  n_classes refers to the number of classes
 
-**!!! Each of the steps described bellow need to be repreated for every distinct domains !!!**
+**!!! Each of the steps described bellow need to be repeated for every distinct domains !!!**
 
 ### 1. Training F_S_i - D_S_i:
 The F_S_i - D_S_i step is necessary for training the F_S_i weights. The F_S_i layer set itself is responsible for performing the feature extraction employed in subsequent steps. The Q_S_i layer is there to simply act as an adaptor to allow for multi-class training and predictions to be performed.
@@ -55,7 +55,7 @@ An Image generator was created to load images in during training. The rescale fa
 - horizontal_flip=True
 - target_size=(224, 224)
 
-Each model was trained for a total of 100 epochs, and a batch size of 32 was opted for. The learning rate was set to 0.0001 and the optimiser used was adam as prescribed in the paper. Finaly, a categorical crossentropy loss was used.
+Each model was trained for a total of 100 epochs, and a batch size of 32 was opted for. The learning rate was set to 0.0001 and the optimiser used was adam as prescribed in the paper. Finally, a categorical crossentropy loss was used.
 
 ### 2. Training F_S_i - D_S_i:
 Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i layer is swapped out for the D_S_i layers.
@@ -64,7 +64,7 @@ Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i la
 -> todo: XAVIER - insert model summary
 
 ### 3. Obtaining source relevance scores using F_S_i - D_S_i:
-Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finaly frozen and an inference step is undertaken. The output of the model is then used in the equation shown below to obtain the source relevance scores which are recorded for subsequent use.
+Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finally frozen and an inference step is undertaken. The output of the model is then used in the equation shown below to obtain the source relevance scores which are recorded for subsequent use.
 
 <img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Source_relevance_sources_eq.png" alt="drawing" width="100"/>
 
@@ -98,7 +98,7 @@ Note: For the Office31 dataset used in this reproduction attempt, the ResNet-50 
 **Weighted aligned classifier: Q_T architecture:**
 Linear F-C (c_dim, c_dim) + ELU + Linear FC (c_dim, n_classes)
 
-The WAMDA model itself is trained in two distinct steps. The first one is employed to learn the Weighted Aligned Spaces, and the second to perform Target Specific Leanring.
+The WAMDA model itself is trained in two distinct steps. The first one is employed to learn the Weighted Aligned Spaces, and the second to perform Target Specific Learning.
 
 ### 1. Weighted Aligned Spaces Learning:
 This is achieved through **alternatively** minimising the **per-source cross-entropy weighted by source importance loss (L_qt)** and the **weighted domain alignment loss (L_align)**. With the exception of F_S_i, all other layers of the WAMDA model are adjusted here.
@@ -115,7 +115,7 @@ A number of limitations and unknows were found for this part, including undefine
 ### 2. Target Specific Learning:
 The Target Specific Learning is also made up of **two alternating parts** during training. The only layers updated in this step are the ones contained in E_T.
 
-The first part is refered to as Distillation and Entropy Minimization, and uses the **distill-entropy loss (L_de)**, itself made up of a **distillation loss (L_distill)** and an **entropy constraint (L_entropy)** to make the target encoder E_T discriminative.
+The first part is referred to as Distillation and Entropy Minimization, and uses the **distill-entropy loss (L_de)**, itself made up of a **distillation loss (L_distill)** and an **entropy constraint (L_entropy)** to make the target encoder E_T discriminative.
 
 The second part, refered to a Guidance from Source Weighted Aligned Spaces, the **target to weighted aligned space loss (L_T->W)** is used to guide the target's projection onto the weighted aligned space.
 
@@ -124,8 +124,9 @@ This aspect of the architecture is the most complex encountered, and as a result
 ![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_step_6.png?raw=true)
 
 ## Reproduction attempt and Results
-->: XAVIER - todo dspecify our implementation details (pythgon version/ tensor flow/ dataset)
+->: XAVIER - todo specify our implementation details (python version/ tensor flow/ dataset)
 ->: XAVIER - todo describe/explain results of reproduction
 
 ## Conclusion
 ->: XAVIER - todo add reproduction attempt conclusion
+![image](https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
