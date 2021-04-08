@@ -1,7 +1,52 @@
 # WAMDA reproduction
 
 ## Background
--> todo: XAVIER - write background
+
+# Introduction
+
+With this blog post, we wish to discuss our recent experience in attempting to implement the research paper titled "WAMDA: Weighted Alignment of Sources for Multi-source Domain Adaptation" by
+S.Aggarwal, J.Nath Kundu, R.Venkatesh Babu and A. Chakraborty at the Department of Computational and Data Sciences (CDS) of the Indian Institute of Science in Bangalore, India.
+
+## Learning \& The Distribution of Data
+
+The common underlying assumption of essentially all, renowned or not, supervised and semi-supervised deep learning algorithms, is that of the data at hand being Independently and Identicainglly
+Distributed, (IID). More specifically, the assumption is that training data and testing data are both drawn from a single common distribution. Consequently, when there are changes in distribution of
+data, it becomes necessary for statistical models to be reconstructed from the distribution of the new data. Often times, the process of doing so proves to be challenging, due to, for instance, having
+to invest a significant amount of time to laborious manual data curation and processing. In some cases, it may even be impossible to do so. In light of this, it became necessary to develop alternative
+approaches which reduce, or all together eliminate, the need and the effort required for obtaining new labeled data, by exploiting the data that is already available and related. This has given rise
+to a new class of machine learning algorithms, called _transfer learning_.
+
+## Transfer Learning in Computer Vision
+
+Transfer learning (TL) refers to the transferring of information from one machine learning task to another. For example, in multi-task learning, a single model solves mul-tiple tasks, such as a deep
+model that has different output nodes for different tasks. Transfer learning mightinvolve transferring knowledge from the solution of a simpler task to a more complex one, or involve transferring
+knowledge from a task where there is more data to one where there is less data.
+
+In the case of computer vision, many _pre-trained models_ (usually trained on the ImageNet dataset) are publicly available for download and can be used to bootstrap powerful vision models out of very
+little data. A pre-trained model is a saved network that was previously trained on a large dataset. In computer vision, this is typically on large-scale image-classification task. The spatial
+hierarchy of features learned by a pre-trained network can effectively act as an abstract model for some visual domain, and hence such features can prove to be very useful. One of the ways in which a
+pre-trained model can be used is for _feature extraction_.
+
+### Feature Extraction with a Pretrained Network/Model
+
+Feature extraction consists of using the representations learned by a previous network to extract interesting features from new samples. These features are then run through a new classifier, which is
+trained from scratch. Generally, basic CNNs used for image classification comprise two parts:
+
+- "Convolutional base of the model": A series of pooling and convolution layers.
+- "Densely connected classifier": A fully-connected dense layer for classification.
+
+![Constituent components of a generic CNN network employed in computer vision Convolutional NeuralNetwork | Deep Learning by Swapna K E](Blog_images/eg_cnn.png)<br>Constituent components of a
+generic CNN network employed in computer vision Convolutional NeuralNetwork | Deep Learning by Swapna K E
+
+**TO BE COMPLETED**
+
+### Domain Adaption
+
+The scenario in which, learning, from a source domain data (distribution), is carried out by a model as to then be able to perform well in adapting to an (unseen/unknown) target domain
+data (distribution) which is unlabelled (unsupervised learning). This "adaptation" of a source domain data trained model to target domain data is essentially the transferal of discriminative knowledge
+learned by the source domain data trained model.
+
+DA enables the learning of a mapping function, h, between (different) domains. When the target domain is unlabelled, the scenario is then what is called Unsupervised Domain Adaptation.
 
 ## Paper approach:
 
@@ -59,6 +104,15 @@ Each model was trained for a total of 100 epochs, and a batch size of 32 was opt
 
 ### 2. Training F_S_i - D_S_i:
 Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i layer is swapped out for the D_S_i layers.
+
+![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi.png)<br>
+
+![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi_model_summary.png)<br>
+
+![Top half FSi DSi component of WAMDA](Blog_images/FSi_DSi_top_half_dot_plot.png)<br>
+
+![Bottom half FSi DSi component of WAMDA](Blog_images/FSi_DSi_bottom_half_dot_plot.png)<br>
+
 
 -> todo: XAVIER - explain training process/parameters adopted
 -> todo: XAVIER - insert model summary
