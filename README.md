@@ -191,4 +191,4 @@ This aspect of the architecture is the most complex encountered, and as a result
 
 # Conclusion
 ->: XAVIER - todo add reproduction attempt conclusion
-[comment]: (https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
+![image](https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
