@@ -113,14 +113,7 @@ Each model was trained for a total of 100 epochs, and a batch size of 32 was opt
 ### 2. Training F_S_i - D_S_i:
 Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i layer is swapped out for the D_S_i layers.
 
-[comment]:![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi.png)<br>
-
 ![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi_model_summary.png)<br>
-
-[comment]:![Top half FSi DSi component of WAMDA](Blog_images/FSi_DSi_top_half_dot_plot.png)<br>
-
-[comment]:![Bottom half FSi DSi component of WAMDA](Blog_images/FSi_DSi_bottom_half_dot_plot.png)<br>
-
 
 -> todo: XAVIER - explain training process/parameters adopted
 -> todo: XAVIER - insert model summary
@@ -191,4 +184,3 @@ This aspect of the architecture is the most complex encountered, and as a result
 
 # Conclusion
 ->: XAVIER - todo add reproduction attempt conclusion
-![image](https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
