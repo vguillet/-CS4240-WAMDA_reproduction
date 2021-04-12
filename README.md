@@ -1,6 +1,14 @@
-# WAMDA reproduction
-
-## Background
+# Work Distribution
+|                Section               | Author |
+|:------------------------------------:|:------:|
+|             Introduction             |  X.G.  |
+|  Learning & The Distribution of Data |  X.G.  |
+| Transfer Learning in Computer Vision |  X.G.  |
+|            Paper approach            |  V.G.  |
+|        Pre-adaptation Learning       |  V.G.  |
+|                 WAMDA                |  V.G.  |
+|   Reproduction attempt and Results   |  X.G.  |
+|              Conclusion              |  X.G.  |
 
 # Introduction
 
@@ -48,7 +56,7 @@ learned by the source domain data trained model.
 
 DA enables the learning of a mapping function, h, between (different) domains. When the target domain is unlabelled, the scenario is then what is called Unsupervised Domain Adaptation.
 
-## Paper approach:
+# Paper approach
 
 The paper proposes an approach split into **two major sections**, which themselves involve a number of steps.
 
@@ -105,13 +113,13 @@ Each model was trained for a total of 100 epochs, and a batch size of 32 was opt
 ### 2. Training F_S_i - D_S_i:
 Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i layer is swapped out for the D_S_i layers.
 
-![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi.png)<br>
+[comment]:![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi.png)<br>
 
 ![The so-called FSi DSi component of WAMDA](Blog_images/FSi_DSi_model_summary.png)<br>
 
-![Top half FSi DSi component of WAMDA](Blog_images/FSi_DSi_top_half_dot_plot.png)<br>
+[comment]:![Top half FSi DSi component of WAMDA](Blog_images/FSi_DSi_top_half_dot_plot.png)<br>
 
-![Bottom half FSi DSi component of WAMDA](Blog_images/FSi_DSi_bottom_half_dot_plot.png)<br>
+[comment]:![Bottom half FSi DSi component of WAMDA](Blog_images/FSi_DSi_bottom_half_dot_plot.png)<br>
 
 
 -> todo: XAVIER - explain training process/parameters adopted
@@ -177,10 +185,10 @@ This aspect of the architecture is the most complex encountered, and as a result
 
 ![doc](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/WAMDA_step_6.png?raw=true)
 
-## Reproduction attempt and Results
+# Reproduction attempt and Results
 ->: XAVIER - todo specify our implementation details (python version/ tensor flow/ dataset)
 ->: XAVIER - todo describe/explain results of reproduction
 
-## Conclusion
+# Conclusion
 ->: XAVIER - todo add reproduction attempt conclusion
-![image](https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
+[comment]:![image](https://user-images.githubusercontent.com/43042800/113839323-e3a08f00-978f-11eb-8200-9ae58c9dd572.png)
