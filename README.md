@@ -1,4 +1,4 @@
-# Work Distribution (to exclude of blog)
+# Work Distribution (to exclude from blog)
 
 |                Section               | Author |
 |:------------------------------------:|:------:|
