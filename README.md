@@ -16,6 +16,7 @@
 |             WAMDA_model_generator.py             |  Victor Guillet  |
 |  FSi_QSi_training_v1.py |  Xavier Goby  |
 | FSi_QSi_training_v2.py |  Victor Guillet  |
+|  FSi_DSi_training_v1.py |  Xavier Goby  |
 
 # Introduction
 
