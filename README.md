@@ -2,14 +2,20 @@
 
 |                Section               | Author |
 |:------------------------------------:|:------:|
-|             Introduction             |  X.G.  |
-|  Learning & The Distribution of Data |  X.G.  |
-| Transfer Learning in Computer Vision |  X.G.  |
-|            Paper approach            |  V.G.  |
-|        Pre-adaptation Learning       |  V.G.  |
-|                 WAMDA                |  V.G.  |
-|   Reproduction attempt and Results   |  X.G.  |
-|              Conclusion              |  X.G.  |
+|             Introduction             |  Xavier Goby  |
+|  Learning & The Distribution of Data |  Xavier Goby  |
+| Transfer Learning in Computer Vision |  Xavier Goby  |
+|            Paper approach            |  Victor Guillet  |
+|        Pre-adaptation Learning       |  Victor Guillet  |
+|                 WAMDA                |  Victor Guillet  |
+|   Reproduction attempt and Results   |  Xavier Goby  |
+|              Conclusion              |  Xavier Goby  |
+
+|                Script               | Author |
+|:------------------------------------:|:------:|
+|             WAMDA_model_generator.py             |  Victor Guillet  |
+|  FSi_QSi_training_v1.py |  Xavier Goby  |
+| FSi_QSi_training_v2.py |  Victor Guillet  |
 
 # Introduction
 
