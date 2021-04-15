@@ -1,4 +1,5 @@
 # Work Distribution
+
 |                Section               | Author |
 |:------------------------------------:|:------:|
 |             Introduction             |  X.G.  |
