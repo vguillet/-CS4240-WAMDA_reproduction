@@ -9,6 +9,14 @@
 |   Reproduction attempt and Results   |  Xavier Goby  |
 |              Conclusion              |  Victor Guillet  |
 
+|                Code                  | Author |  |
+|:------------------------------------:|:------:|:------:|
+|            FSi_QSi_training_v1.py    |  Xavier Goby  | - |
+|            FSi_QSi_training_v2.py    |  Victor Guillet  | Used to obtain the FSi_QSi results in the blog |
+|                 F_S_i.py             |  Xavier Goby | (Resnet layers not connected to the other layers) |
+|           WAMDA_model_generator      |  Victor Guillet  | Used for the FSi_QSi training in the blog |
+|          FSi_DSi_training_v1.py      |  Xavier Goby  | - |
+
 # Introduction
 
 With this blog post, we wish to discuss our recent experience in attempting to implement the research paper titled "WAMDA: Weighted Alignment of Sources for Multi-source Domain Adaptation" by
