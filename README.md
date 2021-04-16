@@ -3,13 +3,11 @@
 |                Section               | Author |
 |:------------------------------------:|:------:|
 |             Introduction             |  Xavier Goby  |
-|  Learning & The Distribution of Data |  Xavier Goby  |
-| Transfer Learning in Computer Vision |  Xavier Goby  |
-|            Paper approach            |  Victor Guillet  |
+|            Reproduction approach     |  Victor Guillet  |
 |        Pre-adaptation Learning       |  Victor Guillet  |
 |                 WAMDA                |  Victor Guillet  |
 |   Reproduction attempt and Results   |  Xavier Goby  |
-|              Conclusion              |  Xavier Goby  |
+|              Conclusion              |  Victor Guillet  |
 
 # Introduction
 
@@ -57,7 +55,7 @@ learned by the source domain data trained model.
 
 DA enables the learning of a mapping function, h, between (different) domains. When the target domain is unlabelled, the scenario is then what is called Unsupervised Domain Adaptation.
 
-# Paper approach
+# Reproduction approach
 
 The paper proposes an approach split into **two major sections**, which themselves involve a number of steps.
 
@@ -184,4 +182,4 @@ This aspect of the architecture is the most complex encountered, and as a result
 ->: XAVIER - todo describe/explain results of reproduction
 
 # Conclusion
-->: XAVIER - todo add reproduction attempt conclusion
+To conclude, despite not succeeding in reproducing the paper in its entirety, the reproduction attempt has allowed for laying the foundations of future further attempts at implementing the WAMDA model. A complete and working implementation of the pre-adaptation learning step is now publicly available for building from, allowing for focusing future efforts on the WAMDA model itself. Further more, the model constructor was developed with the WAMDA model in mind, and as such a number of the basic subsequent layers are readily implemented, and simply require connecting up according to the described scheme in the paper. This blog post also recap some of the issues experiences during the reproduction attempt, and hopefully will enable more insight into this complex paper for future research.
