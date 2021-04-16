@@ -42,7 +42,7 @@ trained from scratch. Generally, basic CNNs used for image classification compri
 - "Convolutional base of the model": A series of pooling and convolution layers.
 - "Densely connected classifier": A fully-connected dense layer for classification.
 
-![Constituent components of a generic CNN network employed in computer vision Convolutional NeuralNetwork | Deep Learning by Swapna K E](Blog_images/eg_cnn.png)<br>Constituent components of a
+![Constituent components of a generic CNN network employed in computer vision Convolutional NeuralNetwork | Deep Learning by Swapna K E](https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/eg_cnn.png)<br>Constituent components of a
 generic CNN network employed in computer vision Convolutional NeuralNetwork | Deep Learning by Swapna K E
 
 **TO BE COMPLETED**
@@ -115,10 +115,9 @@ Upon completion of the first step, the F_S_i layers are frozen, and the Q_S_i la
 <img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/FSi_DSi_model_summary.png" alt="drawing" width="300"/>
 
 -> todo: XAVIER - explain training process/parameters adopted
--> todo: XAVIER - insert model summary
 
 ### 3. Obtaining source relevance scores using F_S_i - D_S_i:
-Upon successfuly training the F_S_i - D_S_i, the D_S_i layers are finally frozen and an inference step is undertaken. The output of the model is then used in the equation shown below to obtain the source relevance scores which are recorded for subsequent use.
+Upon successfully training the F_S_i - D_S_i, the D_S_i layers are finally frozen and an inference step is undertaken. The output of the model is then used in the equation shown below to obtain the source relevance scores which are recorded for subsequent use.
 
 <img src="https://github.com/vguillet/WAMDA_reproduction/blob/main/Blog_images/Source_relevance_sources_eq.png" alt="drawing" width="100"/>
 
@@ -130,7 +129,7 @@ Upon completing the pre-adaption phase and collected all necessary output, the W
 A total of four different layer sets are required for the WAMDA model, and are structured as follow:
 
 **Source feature extractor: F_S_i**
-The F_S_i architecture remains the same as in the pre-adaptation phase. The source-specific weights obtained from the pre-adaptation phase are used here and the layer set is kept frozen throughout the WAMDA traing process.
+The F_S_i architecture remains the same as in the pre-adaptation phase. The source-specific weights obtained from the pre-adaptation phase are used here and the layer set is kept frozen throughout the WAMDA training process.
 
 **E_S_i architecture:**
 -  Linear FC (f_dim, 1024) + BatchNorm + ELU
@@ -156,9 +155,6 @@ The WAMDA model itself is trained in two distinct steps. The first one is employ
 
 ### 1. Weighted Aligned Spaces Learning:
 This is achieved through **alternatively** minimising the **per-source cross-entropy weighted by source importance loss (L_qt)** and the **weighted domain alignment loss (L_align)**. With the exception of F_S_i, all other layers of the WAMDA model are adjusted here.
-
--> todo insert L_qt equation
--> todo insert L_align equation
 
 Each loss was trained using loss-specific optimisers; **per-source cross-entropy loss** for L_qt and **Deep CORAL (L_coral)** for L_align.
 
